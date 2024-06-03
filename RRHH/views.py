@@ -2,7 +2,7 @@ import csv
 from io import TextIOWrapper
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Area, Cargo, Empleado, Departamento, Municipio, Pago, Asistencia, Permiso
+from .models import Area, Cargo, Empleado, Departamento, Municipio, Pago, Permiso
 from .froms import CargoForm, AreaForm, CustomUserCreationForm, CSVUploadForm
 from django.core.paginator import Paginator
 from django.http import Http404
