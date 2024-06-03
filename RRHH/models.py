@@ -98,10 +98,10 @@ class Asistencia(models.Model):
     "Esta es una clase que representa la asistencia de un empleado"
     id_asistencia = models.AutoField(primary_key=True)
     carnet = models.ForeignKey(Empleado, on_delete=models.CASCADE, related_name='asistencias')
-    horas_trabajadas_diunas = models.DateField()
-    horas_trabajadas_nocturnas = models.DateField()
-    horas_extras_diurnas = models.DateField()
-    horas_extras_nocturnas = models.DateField() 
+    horas_trabajadas_diunas = models.IntegerField(default=0)
+    horas_trabajadas_nocturnas = models.IntegerField(default=0)
+    horas_extras_diurnas = models.IntegerField(default=0)
+    horas_extras_nocturnas = models.IntegerField(default=0) 
     mes = [
         ('1', 'Enero'),
         ('2', 'Febrero'),
