@@ -94,32 +94,32 @@ class Pago(models.Model):
     def __str__(self):
         return f'Pago {self.codigo_pago} - {self.carnet}'
 
-# class Asistencia(models.Model):
-#     "Esta es una clase que representa la asistencia de un empleado"
-#     id_asistencia = models.AutoField(primary_key=True)
-#     carnet = models.ForeignKey(Empleado, on_delete=models.CASCADE, related_name='asistencias')
-#     horas_trabajadas_diunas = models.IntegerField(default=0)
-#     horas_trabajadas_nocturnas = models.IntegerField(default=0)
-#     horas_extras_diurnas = models.IntegerField(default=0)
-#     horas_extras_nocturnas = models.IntegerField(default=0) 
-#     mes = [
-#         ('1', 'Enero'),
-#         ('2', 'Febrero'),
-#         ('3', 'Marzo'),
-#         ('4', 'Abril'),
-#         ('5', 'Mayo'),
-#         ('6', 'Junio'),
-#         ('7', 'Julio'),
-#         ('8', 'Agosto'),
-#         ('9', 'Septiembre'),
-#         ('10', 'Octubre'),
-#         ('11', 'Noviembre'),
-#         ('12', 'Diciembre'),
-#         ]
-#     mes_asistencia = models.CharField(max_length=2, choices=mes, default='1')
+class Asistencia(models.Model):
+    "Esta es una clase que representa la asistencia de un empleado"
+    id_asistencia = models.AutoField(primary_key=True)
+    carnet = models.ForeignKey(Empleado, on_delete=models.CASCADE, related_name='asistencias')
+    horas_trabajadas_diunas = models.DateField()
+    horas_trabajadas_nocturnas = models.DateField()
+    horas_extras_diurnas = models.DateField()
+    horas_extras_nocturnas = models.DateField() 
+    mes = [
+        ('1', 'Enero'),
+        ('2', 'Febrero'),
+        ('3', 'Marzo'),
+        ('4', 'Abril'),
+        ('5', 'Mayo'),
+        ('6', 'Junio'),
+        ('7', 'Julio'),
+        ('8', 'Agosto'),
+        ('9', 'Septiembre'),
+        ('10', 'Octubre'),
+        ('11', 'Noviembre'),
+        ('12', 'Diciembre'),
+        ]
+    mes_asistencia = models.CharField(max_length=2, choices=mes, default='1')
 
-#     def __str__(self):
-#         return f'Asistencia {self.id_asistencia} - {self.carnet}'
+    def __str__(self):
+        return f'Asistencia {self.id_asistencia} - {self.carnet}'
 
 class Permiso(models.Model):
     "Esta es una clase que representa un permiso de un empleado"
