@@ -85,7 +85,7 @@ class Migration(migrations.Migration):
                 ('isss', models.DecimalField(decimal_places=2, max_digits=10)),
                 ('afp', models.DecimalField(decimal_places=2, max_digits=10)),
                 ('renta', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('fechapago', models.TimeField()),
+                ('fechapago', models.DateField()),
                 ('carnet', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='pagos', to='RRHH.empleado')),
             ],
         ),
