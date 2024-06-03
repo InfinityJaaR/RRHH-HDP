@@ -55,9 +55,9 @@ class Migration(migrations.Migration):
             name='Asistencia',
             fields=[
                 ('id_asistencia', models.AutoField(primary_key=True, serialize=False)),
-                ('horas_trabajadas', models.DateField()),
-                ('horas_extras_diurnas', models.DateField()),
-                ('horas_extras_nocturnas', models.DateField()),
+                ('horas_trabajadas', models.IntegerField()),
+                ('horas_extras_diurnas', models.IntegerField()),
+                ('horas_extras_nocturnas', models.IntegerField()),
                 ('mes_asistencia', models.DateField()),
                 ('carnet', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='asistencias', to='RRHH.empleado')),
             ],
