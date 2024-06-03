@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             name='Area',
             fields=[
                 ('id_area', models.AutoField(primary_key=True, serialize=False)),
-                ('nombre_area', models.CharField(max_length=50)),
+                ('nombre_area', models.TextField(max_length=50)),
                 ('descripcion_area', models.TextField()),
             ],
         ),
@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
             name='Cargo',
             fields=[
                 ('id_cargo', models.AutoField(primary_key=True, serialize=False)),
-                ('nombre_cargo', models.CharField(max_length=50)),
+                ('nombre_cargo', models.TextField(max_length=50)),
                 ('descripcion_cargo', models.TextField()),
                 ('area', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='cargos', to='RRHH.area')),
             ],
@@ -32,10 +32,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Empleado',
             fields=[
-                ('carnet', models.CharField(max_length=6, primary_key=True, serialize=False)),
-                ('nombres', models.CharField(max_length=50)),
-                ('apellidos', models.CharField(max_length=50)),
-                ('dui', models.CharField(max_length=9)),
+                ('carnet', models.TextField(max_length=6, primary_key=True, serialize=False)),
+                ('nombres', models.TextField(max_length=50)),
+                ('apellidos', models.TextField(max_length=50)),
+                ('dui', models.TextField(max_length=9)),
                 ('genero', models.CharField(choices=[('M', 'Masculino'), ('F', 'Femenino')], default='M', max_length=1)),
                 ('fechanacimiento', models.DateField()),
                 ('direccion', models.TextField()),
@@ -47,7 +47,7 @@ class Migration(migrations.Migration):
             name='Departamento',
             fields=[
                 ('id_departamento', models.AutoField(primary_key=True, serialize=False)),
-                ('nombre_departamento', models.CharField(max_length=50)),
+                ('nombre_departamento', models.TextField(max_length=50)),
                 ('carnet', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='departamentos', to='RRHH.empleado')),
             ],
         ),
@@ -71,7 +71,7 @@ class Migration(migrations.Migration):
             name='Municipio',
             fields=[
                 ('id_municipio', models.AutoField(primary_key=True, serialize=False)),
-                ('nombre_municipio', models.CharField(max_length=50)),
+                ('nombre_municipio', models.TextField(max_length=50)),
                 ('departamento', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='municipios', to='RRHH.departamento')),
             ],
         ),
@@ -97,7 +97,7 @@ class Migration(migrations.Migration):
                 ('fechainicio', models.DateField()),
                 ('fechafinal', models.DateField()),
                 ('justificacion', models.TextField()),
-                ('estado', models.CharField(max_length=50)),
+                ('estado', models.TextField(max_length=50)),
                 ('carnet', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='permisos', to='RRHH.empleado')),
             ],
         ),

@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='empleado',
             name='telefono',
-            field=models.CharField(default='0000-0000', max_length=8),
+            field=models.TextField(default='0000-0000', max_length=8),
         ),
         migrations.AlterField(
             model_name='pago',

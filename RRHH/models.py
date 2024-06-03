@@ -65,7 +65,7 @@ class Empleado(models.Model):
 class Departamento(models.Model):
     "Esta es una clase que representa un departamento del pais El Salvador"
     id_departamento = models.AutoField(primary_key=True)
-    nombre_departamento = models.CharField(max_length=50)
+    nombre_departamento = models.TextField(max_length=50)
     def __str__(self):
         return str(self.nombre_departamento)
 
@@ -73,7 +73,7 @@ class Municipio(models.Model):
     "Esta es una clase que representa un municipio del pais El Salvador" 
     id_municipio = models.AutoField(primary_key=True)
     departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE, related_name='municipios')
-    nombre_municipio = models.CharField(max_length=50)
+    nombre_municipio = models.TextField(max_length=50)
 
     def __str__(self):
         return f'{self.nombre_municipio}'
@@ -133,7 +133,7 @@ class Permiso(models.Model):
         ('2', 'Rechazado'),
         ('3', 'Pendiente'),
         ]
-    estado = models.CharField(max_length=10, choices=estado, default='Pendiente')
+    estado = models.TextField(max_length=10, choices=estado, default='Pendiente')
 
     def __str__(self):
         return f'Permiso {self.codigo_permiso} - {self.carnet}'
