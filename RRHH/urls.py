@@ -33,7 +33,7 @@ urlpatterns = [
     path('registro/<id>',Registro,name="Registro"),
     path('logout/',exit,name="exit" ),
     
-    #path('administrador/asistencia',RegistrarAsistenciaView),
-    path('administrador/asistencias',RegistrarAsistenciaView, name="RegistrarAsistenciaView"),
-    path('administrador/asistencias/guardar', save_csv, name="save_csv"),
+    path('administrador/asistencia',RegistrarAsistenciaView),
+    # path('administrador/asistencias',RegistrarAsistenciaView, name="RegistrarAsistenciaView"),
+    # path('administrador/asistencias/guardar', save_csv, name="save_csv"),
 ]
