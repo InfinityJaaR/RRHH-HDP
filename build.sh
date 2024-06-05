@@ -3,7 +3,7 @@
 set -o errexit
 
 # Modify this line as needed for your package manager (pip, poetry, etc.)
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 
 # if [[ $CREATE_SUPERUSER]]:
 # then
